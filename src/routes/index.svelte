@@ -1,3 +1,7 @@
+<script>
+	import Card from '../components/Card/Card.svelte';
+</script>
+
 <style>
 	h1, figure, p {
 		text-align: center;
@@ -9,16 +13,6 @@
 		text-transform: uppercase;
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
 	}
 
 	p {
@@ -36,11 +30,37 @@
 	<title>Sapper project template</title>
 </svelte:head>
 
-<h1>Great success!</h1>
-
+<h2>Components Showcase</h2>
+<h3>Card:</h3>
 <figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
+	<Card>
+		<p>This is a card component</p>
+	</Card>
+	<Card border={true}>
+		<p>This is a card component with a border</p>
+	</Card>
+	<Card elevation={'01'}>
+		<p>1 elevation</p>
+	</Card>
+	<Card elevation={'02'}>
+		<p>2 elevation</p>
+	</Card>
+	<Card elevation={'03'}>
+		<p>3 elevation</p>
+	</Card>
+	<Card elevation={'04'}>
+		<p>4 elevation</p>
+	</Card>
+	<Card elevation={'06'}>
+		<p>6 elevation</p>
+	</Card>
+	<Card elevation={'08'}>
+		<p>8 elevation</p>
+	</Card>
+	<Card elevation={'12'}>
+		<p>12 elevation</p>
+	</Card>
+	<Card elevation={'24'}>
+		<p>24 elevation</p>
+	</Card>
 </figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
