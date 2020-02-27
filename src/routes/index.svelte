@@ -1,5 +1,9 @@
 <script>
-	import Card from '../components/Card/Card.svelte';
+	import Card from '../components/Card/Card.svelte'
+	import Input from '../components/Input/Input.svelte'
+
+	let name
+	let password
 </script>
 
 <style>
@@ -31,6 +35,19 @@
 </svelte:head>
 
 <h2>Components Showcase</h2>
+<h3>Input:</h3>
+<Input
+	bind:value={name}
+	placeholder="Insert your name"
+	type="text"/>
+<br>
+<Input
+	bind:value={password}
+	placeholder="Insert your password"
+	type="password"/>
+<br>
+<p>My name: {name}</p>
+<p>My pass: {password}</p>
 <h3>Card:</h3>
 <figure>
 	<Card>
