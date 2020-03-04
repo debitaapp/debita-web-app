@@ -1,9 +1,10 @@
 <script>
+	import Tailwindcss from '../components/Tailwindcss.svelte'
 	import Card from '../components/Card/Card.svelte'
-	import Input from '../components/Input/Input.svelte'
+	import Input from '../components/input/Input.svelte'
 
 	let name
-	let password
+    let password
 </script>
 
 <style>
@@ -29,6 +30,8 @@
 		}
 	}
 </style>
+
+<Tailwindcss />
 
 <svelte:head>
 	<title>Sapper project template</title>
