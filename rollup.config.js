@@ -2,6 +2,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
+import svg from 'rollup-plugin-svg-import';
+import sveltePreprocess from 'svelte-preprocess'
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
@@ -22,10 +24,12 @@ export default {
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
+			svg({ stringify: true }),
 			svelte({
 				dev,
 				hydratable: true,
-				emitCss: true
+				emitCss: true,
+				preprocess: sveltePreprocess({ postcss: true }),
 			}),
 			resolve({
 				browser: true,
@@ -66,8 +70,10 @@ export default {
 				'process.browser': false,
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
+			svg({ stringify: true }),
 			svelte({
 				generate: 'ssr',
+				preprocess: sveltePreprocess({ postcss: true }),
 				dev
 			}),
 			resolve({
