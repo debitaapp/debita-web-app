@@ -12,6 +12,10 @@
     "test": "run-p --race dev cy:run"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "compression": "^1.7.4",
     "polka": "next",
     "sirv": "^0.4.0"
@@ -36,6 +40,7 @@
     "rollup-plugin-terser": "^4.0.4",
     "sapper": "^0.27.0",
     "svelte": "^3.0.0",
+    "svelte-fa": "^2.1.1",
     "svelte-preprocess": "^3.4.0",
     "tailwindcss": "^1.2.0"
   }
