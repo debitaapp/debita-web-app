@@ -1,19 +1,43 @@
-const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: [
-    './src/**/*.html',
-    './src/**/*.svelte'
-  ],
+const purgecss = require('@fullhuman/postcss-purgecss');
+const purgeSvelte = require('purgecss-from-svelte');
+const env = process.env.NODE_ENV;
 
-  whitelistPatterns: [/svelte-/],
-
-  defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-})
-
-const production = !process.env.ROLLUP_WATCH
+class TailwindExtractor {
+  static extract(content) {
+    return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
+  }
+}
 
 module.exports = {
   plugins: [
-    require('tailwindcss'),
-    ...(production ? [purgecss] : [])
-  ]
-}
+    require('postcss-import')(),
+    require('postcss-preset-env')({
+      browsers: 'last 2 versions',
+    }),
+    require('tailwindcss')('./tailwind.config.js'),
+    require('postcss-extend')(),
+    require('autoprefixer')(),
+    ...(env !== 'production'
+      ? []
+      : [
+        purgecss({
+          content: ['**/*.html'],
+          css: ['**/*.css'],
+          extractors: [
+            {
+              extractor: purgeSvelte,
+              extensions: ['svelte'],
+            },
+            {
+              extractor: TailwindExtractor,
+
+              // Specify the file extensions to include when scanning for
+              // class names.
+              extensions: ['html'],
+            },
+          ],
+        }),
+        require('cssnano')({ preset: 'default' }),
+      ]),
+  ],
+};

@@ -1,12 +1,3 @@
-<script>
-	import Tailwindcss from '../components/Tailwindcss.svelte'
-	import Card from '../components/Card/Card.svelte'
-	import Input from '../components/input/Input.svelte'
-
-	let name
-    let password
-</script>
-
 <style>
 	h1, figure, p {
 		text-align: center;
@@ -20,6 +11,16 @@
 		margin: 0 0 0.5em 0;
 	}
 
+	figure {
+		margin: 0 0 1em 0;
+	}
+
+	img {
+		width: 100%;
+		max-width: 400px;
+		margin: 0 0 1em 0;
+	}
+
 	p {
 		margin: 1em auto;
 	}
@@ -31,56 +32,15 @@
 	}
 </style>
 
-<Tailwindcss />
-
 <svelte:head>
 	<title>Sapper project template</title>
 </svelte:head>
 
-<h2>Components Showcase</h2>
-<h3>Input:</h3>
-<Input
-	bind:value={name}
-	placeholder="Insert your name"
-	type="text"/>
-<br>
-<Input
-	bind:value={password}
-	placeholder="Insert your password"
-	type="password"/>
-<br>
-<p>My name: {name}</p>
-<p>My pass: {password}</p>
-<h3>Card:</h3>
+<h1>Great success!</h1>
+
 <figure>
-	<Card>
-		<p>This is a card component</p>
-	</Card>
-	<Card border={true}>
-		<p>This is a card component with a border</p>
-	</Card>
-	<Card elevation={'01'}>
-		<p>1 elevation</p>
-	</Card>
-	<Card elevation={'02'}>
-		<p>2 elevation</p>
-	</Card>
-	<Card elevation={'03'}>
-		<p>3 elevation</p>
-	</Card>
-	<Card elevation={'04'}>
-		<p>4 elevation</p>
-	</Card>
-	<Card elevation={'06'}>
-		<p>6 elevation</p>
-	</Card>
-	<Card elevation={'08'}>
-		<p>8 elevation</p>
-	</Card>
-	<Card elevation={'12'}>
-		<p>12 elevation</p>
-	</Card>
-	<Card elevation={'24'}>
-		<p>24 elevation</p>
-	</Card>
+	<img alt='Borat' src='great-success.png'>
+	<figcaption>HIGH FIVE!</figcaption>
 </figure>
+
+<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>

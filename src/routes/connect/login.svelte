@@ -1,8 +1,8 @@
 <script>
-    import Tailwindcss from '../components/Tailwindcss.svelte'
-	import Input from '../components/input/Input.svelte'
-	import Button from '../components/button/Button.svelte';
-	import TypographicLogo from '../components/typographicLogo/TypographicLogo.svelte';
+    import Tailwindcss from '../../components/Tailwindcss.svelte'
+	import Input from '../../components/input/Input.svelte'
+	import Button from '../../components/button/Button.svelte';
+	import TypographicLogo from '../../components/typographicLogo/TypographicLogo.svelte';
 
 	let name
 	let password

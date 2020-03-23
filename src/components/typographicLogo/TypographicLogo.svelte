@@ -5,6 +5,7 @@
 <style>
     .typographicLogo {
         margin: auto;
+        width: 70%;
     }
 </style>
 

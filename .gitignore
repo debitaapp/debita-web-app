@@ -1,6 +1,19 @@
+# IOS files
 .DS_Store
+
+# Nodejs
 /node_modules/
+
+# Sapper
 /src/node_modules/@sapper/
-yarn-error.log
-/cypress/screenshots/
 /__sapper__/
+
+# Yarn
+yarn-error.log
+
+# Cypress
+/cypress/screenshots/
+
+# Config
+.env
+
