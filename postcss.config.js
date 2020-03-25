@@ -1,10 +1,10 @@
-const purgecss = require('@fullhuman/postcss-purgecss');
-const purgeSvelte = require('purgecss-from-svelte');
-const env = process.env.NODE_ENV;
+const purgecss = require('@fullhuman/postcss-purgecss')
+const purgeSvelte = require('purgecss-from-svelte')
+const env = process.env.NODE_ENV
 
 class TailwindExtractor {
   static extract(content) {
-    return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
+    return content.match(/[A-Za-z0-9-_:\/]+/g) || []
   }
 }
 
@@ -20,24 +20,24 @@ module.exports = {
     ...(env !== 'production'
       ? []
       : [
-        purgecss({
-          content: ['**/*.html'],
-          css: ['**/*.css'],
-          extractors: [
-            {
-              extractor: purgeSvelte,
-              extensions: ['svelte'],
-            },
-            {
-              extractor: TailwindExtractor,
+          purgecss({
+            content: ['**/*.html'],
+            css: ['**/*.css'],
+            extractors: [
+              {
+                extractor: purgeSvelte,
+                extensions: ['svelte'],
+              },
+              {
+                extractor: TailwindExtractor,
 
-              // Specify the file extensions to include when scanning for
-              // class names.
-              extensions: ['html'],
-            },
-          ],
-        }),
-        require('cssnano')({ preset: 'default' }),
-      ]),
+                // Specify the file extensions to include when scanning for
+                // class names.
+                extensions: ['html'],
+              },
+            ],
+          }),
+          require('cssnano')({ preset: 'default' }),
+        ]),
   ],
-};
+}

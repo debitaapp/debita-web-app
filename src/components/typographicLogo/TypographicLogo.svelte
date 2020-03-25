@@ -1,14 +1,14 @@
 <script>
-    import TypographicLogo from './../../../static/debita-logo.svg';
+  import TypographicLogo from './../../../static/debita-logo.svg'
 </script>
 
 <style>
-    .typographicLogo {
-        margin: auto;
-        width: 70%;
-    }
+  .typographicLogo {
+    margin: auto;
+    width: 70%;
+  }
 </style>
 
 <div class="typographicLogo">
-    {@html TypographicLogo}
+  {@html TypographicLogo}
 </div>

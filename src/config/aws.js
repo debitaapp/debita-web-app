@@ -5,6 +5,4 @@ const cognito = {
   userPoolWebClientId: process.env.COGNITO_APP_CLIENT_ID,
 }
 
-export {
-  cognito
-}
+export { cognito }
