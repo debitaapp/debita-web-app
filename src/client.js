@@ -1,13 +1,9 @@
 import * as sapper from '@sapper/app'
 import Amplify from 'aws-amplify'
-import { cognito } from './config/aws'
+import awsmobile from './aws-exports'
 
-Amplify.configure({
-	Auth: {
-		...cognito
-	}
-})
+Amplify.configure(awsmobile)
 
 sapper.start({
-	target: document.querySelector('#sapper')
+  target: document.querySelector('#sapper'),
 })
