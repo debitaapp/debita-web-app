@@ -15,10 +15,7 @@
 
 <style>
 	.Welcome {
-		font-size: 1rem;
-		text-align: center;
-		margin-bottom: 3em;
-		margin-top: 1.2em;
+        @apply text-base text-center mt-5 mb-12;
 	}
     .main {
         @apply flex flex-col justify-center
