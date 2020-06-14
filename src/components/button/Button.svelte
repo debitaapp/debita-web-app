@@ -5,9 +5,10 @@
 
 <style>
     .Button {
-        @apply text-base bg-gray-200;
+        @apply text-gray-600;
+        @apply bg-gray-200;
         @apply flex justify-center items-center;
-        @apply text-white font-bold py-4 px-4 rounded-full;
+        @apply font-bold py-4 px-4 rounded-full;
         font-family: 'Muli';
         margin-top: 1rem;
         margin-bottom: 1rem;

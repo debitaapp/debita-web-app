@@ -15,10 +15,7 @@
 
 <style>
 	.Welcome {
-		font-size: 1rem;
-		text-align: center;
-		margin-bottom: 3em;
-		margin-top: 1.2em;
+        @apply text-base text-center mt-5 mb-12;
 	}
     .main {
         @apply flex flex-col justify-center
@@ -29,9 +26,7 @@
     .icon-wrapper {
         @apply mr-8
     }
-    .button-text {
-        @apply text-gray-600
-    }
+
 </style>
 
 <Tailwindcss />
@@ -41,8 +36,8 @@
         <div class="main">
             <TypographicLogo/>
 	        <p class="Welcome">¡Bievenido de nuevo!! Inicia sesión </p>
-            <Button><div class='icon-wrapper'><Fa icon={faFacebookF} color='#3b5998' fw/></div><p class="button-text">Iniciar sesión con Facebook</p></Button>
-            <Button><div class='icon-wrapper'><Fa icon={faGoogle} color='#de5246' fw/></div><p class="button-text">Iniciar sesión con Google</p></Button>
+            <Button><div class='icon-wrapper'><Fa icon={faFacebookF} color='#3b5998' fw/></div><p>Iniciar sesión con Facebook</p></Button>
+            <Button><div class='icon-wrapper'><Fa icon={faGoogle} color='#de5246' fw/></div><p>Iniciar sesión con Google</p></Button>
         </div>
     </Card>
 </div>
